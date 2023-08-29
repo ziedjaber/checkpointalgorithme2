@@ -1,0 +1,30 @@
+Algorithme Sum
+var 
+    t: integer[5];
+    t1: integer[4];
+    t2: integer[x];
+    test: boolean;
+    sum: integer;
+Begin
+    t = {1, 2, 3, 4, 5};
+    test = True;
+    x := 0;
+    t1 = {3, 4, 5, 7}; 
+    FOR i FROM 0 TO 4 STEP 1 DO
+        test := False;   //Initialize test to False for each i 
+        FOR k FROM 0 TO 3 STEP 1 DO
+            IF (t[i] = t1[k]) THEN
+                test := True;   //Set test to True if the elements match
+            END_IF
+        END_FOR   
+        IF (test = False) THEN
+            x := x + 1;
+            t2[x - 1] := t[i];
+        END_IF
+    END_FOR
+    sum := 0;   //Initialize sum
+    FOR i FROM 0 TO x - 1 STEP 1 DO
+        sum := sum + t2[i];   //Accumulate sum of distinct elements
+    END_FOR
+    Write("The sum is ", sum);
+End

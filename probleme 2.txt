@@ -1,0 +1,39 @@
+Algorithme Dot product
+Procedure dot_product(v1: vector of IR, v2: vector of IR, ps: IR)
+Begin
+    ps := 0;  //Initialize the dot product
+    
+    For i = 1 to length of v1
+        ps := ps + (v1[i] * v2[i]);  //Calculate the dot product
+    EndFor
+End
+
+Algorithm DetermineOrthogonalVectors
+    Input: n (number of pairs of vectors)
+    For each pair of vectors (v1, v2) from 1 to n
+        Read v1, v2  //Read the vectors
+        
+        dot_product(v1, v2, ps);  //Calculate the dot product using the procedure
+        
+        If ps = 0 Then
+            Write "Vectors are orthogonal."
+        Else
+            Write "Vectors are not orthogonal."
+        EndIf
+    EndFor
+EndAlgorithm
+
+Algorithm DetermineOrthogonalVectorsUsingFunction
+    Input: n (number of pairs of vectors)
+    For each pair of vectors (v1, v2) from 1 to n
+        Read v1, v2  //Read the vectors
+        
+        ps := dot_product_function(v1, v2);  //Calculate the dot product using the function
+        
+        If ps = 0 Then
+            Write "Vectors are orthogonal."
+        Else
+            Write "Vectors are not orthogonal."
+        EndIf
+    EndFor
+EndAlgorithm
